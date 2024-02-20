@@ -3,3 +3,10 @@
 /DinoAdventure/.vs
 /DinoAdventure/Temp
 /DinoAdventure/*.csproj
+*.csproj
+/DinoAdventure/AppleAuth.Editor.csproj
+/DinoAdventure/UserSettings
+/DinoAdventure/*.vsconfig
+/DinoAdventure/*.log
+/DinoAdventure/*.sln
+/DinoAdventure/obj

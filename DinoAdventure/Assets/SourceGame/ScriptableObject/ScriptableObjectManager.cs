@@ -22,14 +22,17 @@ public class EnemyAttribute
     public float TimeResetBullet;
     public float SpeedBullet;
     public float MoveSpeed;
+    public int SpeedRotation;
     public int Hp;
     public int IndexBullet;
     public EnemyAttack attack;
+    public bool isAILerp; // true = AILerp != null
 }
 [System.Serializable]
 public class BulletData
 {
-    public GameObject enemyBullet;
+    public Sprite sprite;
+    public float speed;
 }
 [System.Serializable]
 public class explosionData
@@ -45,4 +48,7 @@ public enum EnemyAttack
     Attack1rays = 1,
     Attack3rays = 2,
     Attack360degrees = 3,
+    Attack3raysx2 = 4,
+    AttackRandom = 5,
+    AttackMiner = 6,
 }

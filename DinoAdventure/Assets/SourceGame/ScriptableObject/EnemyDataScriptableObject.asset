@@ -13,68 +13,113 @@ MonoBehaviour:
   m_Name: EnemyDataScriptableObject
   m_EditorClassIdentifier: 
   ListEnemyData:
-  - EnemyName: 
+  - Key: Cockroach
+    EnemyName: Cockroach
+    TimeResetBullet: 3
+    SpeedBullet: 6
+    MoveSpeed: 0.2
+    SpeedRotation: 5
+    Hp: 5
+    IndexBullet: 2
+    attack: 6
+    isAILerp: 1
+  - Key: 
+    EnemyName: 
     TimeResetBullet: 0
     SpeedBullet: 0
     MoveSpeed: 0
+    SpeedRotation: 0
     Hp: 0
     IndexBullet: 0
-  - EnemyName: 
+    attack: 0
+    isAILerp: 0
+  - Key: 
+    EnemyName: 
     TimeResetBullet: 0
     SpeedBullet: 0
     MoveSpeed: 0
+    SpeedRotation: 0
     Hp: 0
     IndexBullet: 0
-  - EnemyName: 
+    attack: 0
+    isAILerp: 0
+  - Key: 
+    EnemyName: 
     TimeResetBullet: 0
     SpeedBullet: 0
     MoveSpeed: 0
+    SpeedRotation: 0
     Hp: 0
     IndexBullet: 0
-  - EnemyName: 
+    attack: 0
+    isAILerp: 0
+  - Key: 
+    EnemyName: 
     TimeResetBullet: 0
     SpeedBullet: 0
     MoveSpeed: 0
+    SpeedRotation: 0
     Hp: 0
     IndexBullet: 0
-  - EnemyName: 
+    attack: 0
+    isAILerp: 0
+  - Key: 
+    EnemyName: 
     TimeResetBullet: 0
     SpeedBullet: 0
     MoveSpeed: 0
+    SpeedRotation: 0
     Hp: 0
     IndexBullet: 0
-  - EnemyName: 
+    attack: 0
+    isAILerp: 0
+  - Key: 
+    EnemyName: 
     TimeResetBullet: 0
     SpeedBullet: 0
     MoveSpeed: 0
+    SpeedRotation: 0
     Hp: 0
     IndexBullet: 0
-  - EnemyName: 
+    attack: 0
+    isAILerp: 0
+  - Key: 
+    EnemyName: 
     TimeResetBullet: 0
     SpeedBullet: 0
     MoveSpeed: 0
+    SpeedRotation: 0
     Hp: 0
     IndexBullet: 0
-  - EnemyName: 
+    attack: 0
+    isAILerp: 0
+  - Key: 
+    EnemyName: 
     TimeResetBullet: 0
     SpeedBullet: 0
     MoveSpeed: 0
+    SpeedRotation: 0
     Hp: 0
     IndexBullet: 0
-  - EnemyName: 
+    attack: 0
+    isAILerp: 0
+  - Key: 
+    EnemyName: 
     TimeResetBullet: 0
     SpeedBullet: 0
     MoveSpeed: 0
+    SpeedRotation: 0
     Hp: 0
     IndexBullet: 0
-  - EnemyName: 
-    TimeResetBullet: 0
-    SpeedBullet: 0
-    MoveSpeed: 0
-    Hp: 0
-    IndexBullet: 0
-  ListBulletData: []
+    attack: 0
+    isAILerp: 0
+  ListBulletData:
+  - {fileID: -6007857137893288414, guid: 1798db9d9dec5da419d86d2577a55bdc, type: 3}
+  - {fileID: 7145198348311737387, guid: 9e49f2841a2a842449791a6ec28832d9, type: 3}
+  - {fileID: -5643105228771564274, guid: 6b6a89af70e5ffe42a1820cef2cff5c0, type: 3}
   explosionData:
     explosion: {fileID: 0}
     explosionClassic: {fileID: 0}
     explosionBazoka: {fileID: 0}
+  EnemyBulletObj: {fileID: 2678608978443545338, guid: 7c55f2c5cd01b164a8fba1504e11e264, type: 3}
+  EnemyBulletMiner: {fileID: 8573175120897339936, guid: 0b6826aab20e95e49b02b317866643a0, type: 3}

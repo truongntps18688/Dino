@@ -35,8 +35,11 @@ public class EnemyNormal : MonoBehaviour
         explosionData = ScriptableObjectManager.Instance.EnemyDataScriptableObject.explosionData;
         enemyBullet = ScriptableObjectManager.Instance.EnemyDataScriptableObject.EnemyBulletObj;
         if (data == null)
+        {
             Destroy(gameObject);
-        
+            return;
+        }
+
         HP = data.Hp;
         isAILerp = data.isAILerp;
 
@@ -59,6 +62,7 @@ public class EnemyNormal : MonoBehaviour
         if (isAILerp) return;
         if (rigidbody2D.velocity.x < data.MoveSpeed - 0.2f & rigidbody2D.velocity.x > -data.MoveSpeed + 0.2f)
         {
+            Debug.Log("???");
             x = Random.Range(-1f, 1f);
             y = Random.Range(-1f, 1f);
             rigidbody2D.velocity = new Vector2(x * data.MoveSpeed, y * data.MoveSpeed);
@@ -75,9 +79,11 @@ public class EnemyNormal : MonoBehaviour
     }
     void faceVelocity()
     {
-        if (!isAILerp)
-            return;
-        direction = AILerpPath.velocity;
+        if (isAILerp)
+            direction = AILerpPath.velocity;
+        else
+            direction = rigidbody2D.velocity;
+
         transform.localScale = direction.x > 0 ? new Vector3(1f, 1f, 1f) : new Vector3(-1f, 1f, 1f);
     }
     void attackEnemy()

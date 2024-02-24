@@ -23,25 +23,25 @@ MonoBehaviour:
     IndexBullet: 2
     attack: 6
     isAILerp: 1
-  - Key: 
-    EnemyName: 
-    TimeResetBullet: 0
-    SpeedBullet: 0
-    MoveSpeed: 0
-    SpeedRotation: 0
-    Hp: 0
-    IndexBullet: 0
-    attack: 0
-    isAILerp: 0
-  - Key: 
-    EnemyName: 
-    TimeResetBullet: 0
-    SpeedBullet: 0
-    MoveSpeed: 0
-    SpeedRotation: 0
-    Hp: 0
-    IndexBullet: 0
-    attack: 0
+  - Key: Angle
+    EnemyName: Angle
+    TimeResetBullet: 3
+    SpeedBullet: 6
+    MoveSpeed: 0.2
+    SpeedRotation: 5
+    Hp: 5
+    IndexBullet: 2
+    attack: 1
+    isAILerp: 1
+  - Key: Bushly
+    EnemyName: Bushly
+    TimeResetBullet: 3
+    SpeedBullet: 6
+    MoveSpeed: 0.75
+    SpeedRotation: 5
+    Hp: 5
+    IndexBullet: 2
+    attack: 2
     isAILerp: 0
   - Key: 
     EnemyName: 

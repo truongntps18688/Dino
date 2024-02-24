@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.angularDrag = 0.0f;
+        rb.gravityScale = 0.0f;
     }
     void Update()
     {
@@ -22,6 +24,6 @@ public class PlayerMovement : MonoBehaviour
     }
     void CalculateMovement()
     {
-      rb.MovePosition(rb.position + moveDirection.normalized * moveSpeed * Time.fixedDeltaTime);
+      rb.MovePosition(rb.position + (moveDirection * moveSpeed * Time.fixedDeltaTime));
     }
 }

@@ -21,7 +21,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.gameObject.layer == 8)
         {
-            Instantiate(ScriptableObjectManager.Instance.EnemyDataScriptableObject.explosionData.explosion, transform.position, Quaternion.identity);
+            Instantiate(ScriptableObjectMN.Instance.EnemyData.explosionData.explosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

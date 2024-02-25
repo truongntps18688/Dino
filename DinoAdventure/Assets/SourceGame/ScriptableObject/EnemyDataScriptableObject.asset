@@ -15,104 +15,148 @@ MonoBehaviour:
   ListEnemyData:
   - Key: Cockroach
     EnemyName: Cockroach
-    TimeResetBullet: 3
-    SpeedBullet: 6
-    MoveSpeed: 0.2
-    SpeedRotation: 5
-    Hp: 5
-    IndexBullet: 2
-    attack: 6
-    isAILerp: 1
+    TimeResetBullet: 0
+    SpeedBullet: 0
+    MoveSpeed: 0.85
+    SpeedRotation: 0
+    Hp: 3
+    IndexBullet: 0
+    attack: 0
   - Key: Angle
     EnemyName: Angle
-    TimeResetBullet: 3
-    SpeedBullet: 6
-    MoveSpeed: 0.2
-    SpeedRotation: 5
+    TimeResetBullet: 5
+    SpeedBullet: 0.9
+    MoveSpeed: 0.23
+    SpeedRotation: 0
+    Hp: 6
+    IndexBullet: 2
+    attack: 1
+  - Key: Bushly
+    EnemyName: Bushly
+    TimeResetBullet: 5
+    SpeedBullet: 0.9
+    MoveSpeed: 0.75
+    SpeedRotation: 0
     Hp: 5
     IndexBullet: 2
     attack: 1
-    isAILerp: 1
-  - Key: Bushly
-    EnemyName: Bushly
-    TimeResetBullet: 3
-    SpeedBullet: 6
-    MoveSpeed: 0.75
+  - Key: GiantDog
+    EnemyName: GiantDog
+    TimeResetBullet: 0
+    SpeedBullet: 0
+    MoveSpeed: 0.9
+    SpeedRotation: 0
+    Hp: 12
+    IndexBullet: 0
+    attack: 0
+  - Key: GreenDevil
+    EnemyName: GreenDevil
+    TimeResetBullet: 5
+    SpeedBullet: 0.9
+    MoveSpeed: 0.23
+    SpeedRotation: 0
+    Hp: 6
+    IndexBullet: 0
+    attack: 1
+  - Key: Hedgehog
+    EnemyName: Hedgehog
+    TimeResetBullet: 5
+    SpeedBullet: 0.9
+    MoveSpeed: 0.23
+    SpeedRotation: 0
+    Hp: 6
+    IndexBullet: 0
+    attack: 1
+  - Key: KingSanta
+    EnemyName: KingSanta
+    TimeResetBullet: 0.15
+    SpeedBullet: 0.05
+    MoveSpeed: 0.23
     SpeedRotation: 5
+    Hp: 12
+    IndexBullet: 0
+    attack: 3
+  - Key: LittleAssassin
+    EnemyName: LittleAssassin
+    TimeResetBullet: 5
+    SpeedBullet: 0.9
+    MoveSpeed: 0.8
+    SpeedRotation: 0
+    Hp: 6
+    IndexBullet: 0
+    attack: 1
+  - Key: LittleKiller
+    EnemyName: LittleKiller
+    TimeResetBullet: 5
+    SpeedBullet: 0.9
+    MoveSpeed: 0.27
+    SpeedRotation: 0
+    Hp: 6
+    IndexBullet: 0
+    attack: 1
+  - Key: Mushroom
+    EnemyName: Mushroom
+    TimeResetBullet: 6
+    SpeedBullet: 0.9
+    MoveSpeed: 0.7
+    SpeedRotation: 0
     Hp: 5
-    IndexBullet: 2
-    attack: 2
-    isAILerp: 0
-  - Key: 
-    EnemyName: 
+    IndexBullet: 0
+    attack: 1
+  - Key: MutantCrab
+    EnemyName: MutantCrab
     TimeResetBullet: 0
     SpeedBullet: 0
-    MoveSpeed: 0
+    MoveSpeed: 0.85
     SpeedRotation: 0
-    Hp: 0
+    Hp: 12
     IndexBullet: 0
     attack: 0
-    isAILerp: 0
-  - Key: 
-    EnemyName: 
+  - Key: Norman
+    EnemyName: Norman
+    TimeResetBullet: 5
+    SpeedBullet: 0.9
+    MoveSpeed: 0.8
+    SpeedRotation: 0
+    Hp: 6
+    IndexBullet: 0
+    attack: 1
+  - Key: Pumpking
+    EnemyName: Pumpking
+    TimeResetBullet: 5
+    SpeedBullet: 0.7
+    MoveSpeed: 0.25
+    SpeedRotation: 0
+    Hp: 6
+    IndexBullet: 0
+    attack: 1
+  - Key: Rolling
+    EnemyName: Rolling
     TimeResetBullet: 0
     SpeedBullet: 0
-    MoveSpeed: 0
+    MoveSpeed: 0.8
     SpeedRotation: 0
-    Hp: 0
+    Hp: 12
     IndexBullet: 0
     attack: 0
-    isAILerp: 0
-  - Key: 
-    EnemyName: 
+  - Key: Skull
+    EnemyName: Skull
     TimeResetBullet: 0
     SpeedBullet: 0
-    MoveSpeed: 0
+    MoveSpeed: 0.6
     SpeedRotation: 0
-    Hp: 0
+    Hp: 3
     IndexBullet: 0
     attack: 0
-    isAILerp: 0
-  - Key: 
-    EnemyName: 
-    TimeResetBullet: 0
-    SpeedBullet: 0
-    MoveSpeed: 0
+  - Key: VioletDevil
+    EnemyName: VioletDevil
+    TimeResetBullet: 5
+    SpeedBullet: 0.9
+    MoveSpeed: 0.23
     SpeedRotation: 0
-    Hp: 0
+    Hp: 6
     IndexBullet: 0
-    attack: 0
-    isAILerp: 0
-  - Key: 
-    EnemyName: 
-    TimeResetBullet: 0
-    SpeedBullet: 0
-    MoveSpeed: 0
-    SpeedRotation: 0
-    Hp: 0
-    IndexBullet: 0
-    attack: 0
-    isAILerp: 0
-  - Key: 
-    EnemyName: 
-    TimeResetBullet: 0
-    SpeedBullet: 0
-    MoveSpeed: 0
-    SpeedRotation: 0
-    Hp: 0
-    IndexBullet: 0
-    attack: 0
-    isAILerp: 0
-  - Key: 
-    EnemyName: 
-    TimeResetBullet: 0
-    SpeedBullet: 0
-    MoveSpeed: 0
-    SpeedRotation: 0
-    Hp: 0
-    IndexBullet: 0
-    attack: 0
-    isAILerp: 0
+    attack: 1
   ListBulletData:
   - {fileID: -6007857137893288414, guid: 1798db9d9dec5da419d86d2577a55bdc, type: 3}
   - {fileID: 7145198348311737387, guid: 9e49f2841a2a842449791a6ec28832d9, type: 3}

@@ -8,7 +8,6 @@ public class EnemyNormal : MonoBehaviour
     public string key;
     public EnemyAttribute data;
     public AILerp AILerpPath;
-    public bool isAILerp = false;
     public float HP = 0;
     public Animator animator;
     public Rigidbody2D rigidbody2D;
@@ -23,6 +22,7 @@ public class EnemyNormal : MonoBehaviour
     //
     float x, y, angel = 0, radius = 10;
     float xBullet, yBullet;
+    
     void Start()
     {
         getData();
@@ -31,9 +31,9 @@ public class EnemyNormal : MonoBehaviour
     {
         if (key.Length == 0)
             key = gameObject.name;
-        data = ScriptableObjectManager.Instance.EnemyDataScriptableObject.getDataEnemyKey(key);
-        explosionData = ScriptableObjectManager.Instance.EnemyDataScriptableObject.explosionData;
-        enemyBullet = ScriptableObjectManager.Instance.EnemyDataScriptableObject.EnemyBulletObj;
+        data = ScriptableObjectMN.Instance.EnemyData.getDataEnemyKey(key);
+        explosionData = ScriptableObjectMN.Instance.EnemyData.explosionData;
+        enemyBullet = ScriptableObjectMN.Instance.EnemyData.EnemyBulletObj;
         if (data == null)
         {
             Destroy(gameObject);
@@ -41,12 +41,11 @@ public class EnemyNormal : MonoBehaviour
         }
 
         HP = data.Hp;
-        isAILerp = data.isAILerp;
 
         repeatLoop = repeat = 1;
         timeLoop = data.TimeResetBullet;
 
-        if (isAILerp)
+        if (checkAIPath())
             AILerpPath.speed = data.MoveSpeed;
     }
 
@@ -59,10 +58,9 @@ public class EnemyNormal : MonoBehaviour
     }
     void isMoveNotAILerp()
     {
-        if (isAILerp) return;
+        if (checkAIPath()) return;
         if (rigidbody2D.velocity.x < data.MoveSpeed - 0.2f & rigidbody2D.velocity.x > -data.MoveSpeed + 0.2f)
         {
-            Debug.Log("???");
             x = Random.Range(-1f, 1f);
             y = Random.Range(-1f, 1f);
             rigidbody2D.velocity = new Vector2(x * data.MoveSpeed, y * data.MoveSpeed);
@@ -72,14 +70,14 @@ public class EnemyNormal : MonoBehaviour
     {
         if (HP <= 0 & die == false)
         {
-            if (isAILerp)
+            if (checkAIPath())
                 AILerpPath.speed = 0;
             animator.SetBool("Die", true);
         }
     }
     void faceVelocity()
     {
-        if (isAILerp)
+        if (checkAIPath())
             direction = AILerpPath.velocity;
         else
             direction = rigidbody2D.velocity;
@@ -120,7 +118,7 @@ public class EnemyNormal : MonoBehaviour
         timeLoop -= Time.deltaTime;
         if (timeLoop <= 0)
         {
-            Instantiate(ScriptableObjectManager.Instance.EnemyDataScriptableObject.EnemyBulletMiner, transform.position, Quaternion.identity);
+            Instantiate(ScriptableObjectMN.Instance.EnemyData.EnemyBulletMiner, transform.position, Quaternion.identity);
             timeLoop = data.TimeResetBullet;
         }
     }
@@ -165,7 +163,7 @@ public class EnemyNormal : MonoBehaviour
     }
     void Attack3rays()
     {
-        if (!isAILerp) return;
+        if (!checkAIPath()) return;
 
         timeLoop -= Time.deltaTime;
         if (timeLoop <= 0)
@@ -228,7 +226,7 @@ public class EnemyNormal : MonoBehaviour
             {
                 repeatLoop--;
                 EnemyBullet EnemyBullet = Instantiate(enemyBullet, transform.position, Quaternion.identity);
-                EnemyBullet.setData(ScriptableObjectManager.Instance.EnemyDataScriptableObject.getBulletObj(data.IndexBullet));
+                EnemyBullet.setData(ScriptableObjectMN.Instance.EnemyData.getBulletObj(data.IndexBullet));
                 Vector2 moveDirection = (GameSC.Instance.objPlayer.transform.position - transform.position).normalized;
                 EnemyBullet.rigidbody2D.velocity = new Vector2(moveDirection.x * data.SpeedBullet, moveDirection.y * data.SpeedBullet);
                 EnemyBullet.transform.right = new Vector2(moveDirection.x, moveDirection.y);
@@ -299,5 +297,9 @@ public class EnemyNormal : MonoBehaviour
             HP -= 8;
             animator.SetBool("Hurt", true);
         }
+    }
+    public bool checkAIPath()
+    {
+        return AILerpPath != null;
     }
 }

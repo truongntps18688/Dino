@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDestroyOnLoad: 0
-  EnemyDataScriptableObject: {fileID: 11400000, guid: e385149f3b351b64ab63a4f4b4ccf282, type: 2}
+  EnemyData: {fileID: 11400000, guid: e385149f3b351b64ab63a4f4b4ccf282, type: 2}

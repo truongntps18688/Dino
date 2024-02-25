@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScriptableObjectManager : Singleton<ScriptableObjectManager>
+public class ScriptableObjectMN : Singleton<ScriptableObjectMN>
 {
-    public EnemyDataScriptableObject EnemyDataScriptableObject;
+    public EnemyDataScriptableObject EnemyData;
 
     void Start()
     {
-        Debug.Log("load data enemy: " + EnemyDataScriptableObject.ListEnemyData.Count);
+        Debug.Log("load data enemy: " + EnemyData.ListEnemyData.Count);
     }
 
 }
@@ -26,7 +26,6 @@ public class EnemyAttribute
     public int Hp;
     public int IndexBullet;
     public EnemyAttack attack;
-    public bool isAILerp; // true = AILerp != null
 }
 [System.Serializable]
 public class BulletData

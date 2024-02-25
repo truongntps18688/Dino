@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class EnemyNormal : MonoBehaviour
 {
-    public string key;
-    public EnemyAttribute data;
-    public AILerp AILerpPath;
-    public float HP = 0;
-    public Animator animator;
-    public Rigidbody2D rigidbody2D;
-
+    [SerializeField] public string key;
+    [SerializeField] public EnemyAttribute data;
+    [SerializeField] public AILerp AILerpPath;
+    [SerializeField] public Animator animator;
+    [SerializeField] public Rigidbody2D rigidbody2D;
+    float HP = 0;
     private explosionData explosionData;
     Vector2 direction;
     bool die = false;
@@ -37,6 +36,7 @@ public class EnemyNormal : MonoBehaviour
         if (data == null)
         {
             Destroy(gameObject);
+            Debug.Log("not data enemy key: " + key);
             return;
         }
 

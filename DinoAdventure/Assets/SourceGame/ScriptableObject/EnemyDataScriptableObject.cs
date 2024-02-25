@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyDataScriptableObject : ScriptableObject
 {
     public List<EnemyAttribute> ListEnemyData = new List<EnemyAttribute>();
+    public List<BossAttribute> listBossdata = new List<BossAttribute>();
     public List<Sprite> ListBulletData = new List<Sprite>();
     public explosionData explosionData;
     public EnemyBullet EnemyBulletObj;
@@ -15,6 +16,10 @@ public class EnemyDataScriptableObject : ScriptableObject
     public EnemyAttribute getDataEnemyKey(string key)
     {
         return ListEnemyData.Find(item => item.Key == key);
+    }
+    public BossAttribute getDataBossKey(string key)
+    {
+        return listBossdata.Find(item => item.Key == key);
     }
     public Sprite getBulletObj(int index)
     {

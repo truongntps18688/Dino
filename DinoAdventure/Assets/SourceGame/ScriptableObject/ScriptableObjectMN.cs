@@ -86,7 +86,27 @@ public enum EnemyAttack
     Attack3raysx2 = 4,
     AttackRandom = 5,
     AttackMiner = 6,
+    BossAttachk1 = 7,
+    BossAttachk2 = 8,
+    BossAttachk3 = 9,
+    BossAttachk4 = 10,
+    BossAttachk5 = 11,
+    BossAttachk6 = 12,
+    BossAttachk7 = 13,
 }
+[System.Serializable]
+public class BossAttribute
+{
+    public string Key;
+    public string EnemyName;
+    public float MoveSpeed;
+    public float SpeedBullet;
+    public float TimeLoop;
+    public int Hp;
+    public float TimeRun;
+    public EnemyAttack BossAttack;
+}
+
 
 public enum WeaponType
 {

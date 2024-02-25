@@ -157,6 +157,47 @@ MonoBehaviour:
     Hp: 6
     IndexBullet: 0
     attack: 1
+  listBossdata:
+  - Key: Boss_GiantMutantBeetle
+    EnemyName: Boss_GiantMutantBeetle
+    MoveSpeed: 0.5
+    SpeedBullet: 2
+    TimeLoop: 3
+    Hp: 60
+    TimeRun: 20
+    BossAttack: 7
+  - Key: Boss_SkullGod
+    EnemyName: Boss_SkullGod
+    MoveSpeed: 0.3
+    SpeedBullet: 0.1
+    TimeLoop: 3
+    Hp: 60
+    TimeRun: 0
+    BossAttack: 8
+  - Key: Boss_DarkSideDino
+    EnemyName: Boss_DarkSideDino
+    MoveSpeed: 0.5
+    SpeedBullet: 0
+    TimeLoop: 3
+    Hp: 60
+    TimeRun: 0
+    BossAttack: 9
+  - Key: Boss_TheThreeHusketeers
+    EnemyName: Boss_TheThreeHusketeers
+    MoveSpeed: 0.3
+    SpeedBullet: 0
+    TimeLoop: 3
+    Hp: 60
+    TimeRun: 0
+    BossAttack: 10
+  - Key: Boss_UmbrellaDarkKnight
+    EnemyName: Boss_UmbrellaDarkKnight
+    MoveSpeed: 4
+    SpeedBullet: 0
+    TimeLoop: 5
+    Hp: 60
+    TimeRun: 0
+    BossAttack: 11
   ListBulletData:
   - {fileID: -6007857137893288414, guid: 1798db9d9dec5da419d86d2577a55bdc, type: 3}
   - {fileID: 7145198348311737387, guid: 9e49f2841a2a842449791a6ec28832d9, type: 3}

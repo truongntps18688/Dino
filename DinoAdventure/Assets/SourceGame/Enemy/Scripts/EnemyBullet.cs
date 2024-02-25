@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public Rigidbody2D rigidbody2D;
-    public SpriteRenderer sprite;
+    [SerializeField] public Rigidbody2D rigidbody2D;
+    [SerializeField] public SpriteRenderer sprite;
 
     // Start is called before the first frame update
     void Start()

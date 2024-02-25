@@ -29,7 +29,8 @@ void Update()
 
     private void OnGUI()
     {
-		GUI.Label(new Rect(25, 25, 200, 40), "Angle Between Objects" + angle);
+		//GUI.Label(new Rect(25, 25, 200, 40), "Angle Between Objects" + angle);
+		GUI.Label(new Rect(0, 0, 100, 100), "FPS" + (int)(1.0f / Time.smoothDeltaTime));
 	}
 
 }

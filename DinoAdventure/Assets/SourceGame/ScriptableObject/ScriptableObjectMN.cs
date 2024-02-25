@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScriptableObjectMN : Singleton<ScriptableObjectMN>
 {
     public EnemyDataScriptableObject EnemyData;
+    public PlayerDataScriptableObject PlayerData;
 
     void Start()
     {
@@ -12,7 +13,42 @@ public class ScriptableObjectMN : Singleton<ScriptableObjectMN>
     }
 
 }
+[System.Serializable]
+public class SkinData
+{
+    public string name;
+    public Sprite idle;
+    public Animator animator;
+}
+[System.Serializable]
+public class WeaponData
+{
+    public string name;
+    public WeaponType WeaponType;
+    public int Dmg;
+    public float CoolDown;
+    public float Recoil;
+    public float WindowShake;
+    public int IndexBulletWeaponData;
+}
+[System.Serializable]
+public class BulletWeaponData
+{
+    public string name;
+    public int SpeedBullet;
+    public GameObject prefab;
+}
 
+[System.Serializable]
+public class PlayerAttribute
+{
+    public string PlayerName;
+    public float MoveSpeed;
+    public int HightScore;
+    public int UnlockWeapon;
+    public int indexSkin;
+    public int currWeapon;
+}
 
 [System.Serializable]
 public class EnemyAttribute
@@ -50,4 +86,11 @@ public enum EnemyAttack
     Attack3raysx2 = 4,
     AttackRandom = 5,
     AttackMiner = 6,
+}
+
+public enum WeaponType
+{
+    None = 0,
+    Pistol = 1,
+    Bazooka = 2,
 }

@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDestroyOnLoad: 0
   EnemyData: {fileID: 11400000, guid: e385149f3b351b64ab63a4f4b4ccf282, type: 2}
+  PlayerData: {fileID: 11400000, guid: d12bccc462cb49d46ac85a25fbfbfd0d, type: 2}

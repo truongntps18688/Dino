@@ -8,9 +8,8 @@ public class EnemyDataScriptableObject : ScriptableObject
     public List<EnemyAttribute> ListEnemyData = new List<EnemyAttribute>();
     public List<BossAttribute> listBossdata = new List<BossAttribute>();
     public List<Sprite> ListBulletData = new List<Sprite>();
+    public List<BulletData> ListBullet = new List<BulletData>();
     public explosionData explosionData;
-    public EnemyBullet EnemyBulletObj;
-    public EnemyBulletMiner EnemyBulletMiner;
 
 
     public EnemyAttribute getDataEnemyKey(string key)
@@ -24,5 +23,9 @@ public class EnemyDataScriptableObject : ScriptableObject
     public Sprite getBulletObj(int index)
     {
         return ListBulletData[index];
+    }
+    public BulletData getBulletObj(BulletType type)
+    {
+        return ListBullet.Find(item => item.type == type);
     }
 }

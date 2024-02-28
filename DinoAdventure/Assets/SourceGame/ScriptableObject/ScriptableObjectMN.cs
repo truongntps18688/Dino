@@ -60,14 +60,18 @@ public class EnemyAttribute
     public float MoveSpeed;
     public int SpeedRotation;
     public int Hp;
-    public int IndexBullet;
+    public BulletType bulletType;
     public EnemyAttack attack;
 }
 [System.Serializable]
 public class BulletData
 {
-    public Sprite sprite;
-    public float speed;
+    public BulletType type;
+    public float timeDestroy;
+    public BulletObj Obj;
+    public bool isCloneBullet;
+    public int numBullet;
+    public float SpeedNumBullet;
 }
 [System.Serializable]
 public class explosionData
@@ -76,23 +80,22 @@ public class explosionData
     public GameObject explosionClassic;
     public GameObject explosionBazoka;
 }
+
+
 [System.Serializable]
 public enum EnemyAttack
 {
-    None = 0,
-    Attack1rays = 1,
-    Attack3rays = 2,
-    Attack360degrees = 3,
-    Attack3raysx2 = 4,
-    AttackRandom = 5,
-    AttackMiner = 6,
-    BossAttachk1 = 7,
-    BossAttachk2 = 8,
-    BossAttachk3 = 9,
-    BossAttachk4 = 10,
-    BossAttachk5 = 11,
-    BossAttachk6 = 12,
-    BossAttachk7 = 13,
+    None = 0, Attack1rays,
+    Attack3rays, Attack360degrees,
+    Attack3raysx2, AttackRandom, AttackMiner,
+    BossAttachk1, BossAttachk2, BossAttachk3,
+    BossAttachk4, BossAttachk5,
+    BossAttachk6, BossAttachk7,
+}
+[System.Serializable]
+public enum BulletType
+{
+    None = 0, Blue, Yellow, Red, Ellipse, Rhombus, ArrowShape, Circle, FootballShape, Crescent, Miner
 }
 [System.Serializable]
 public class BossAttribute

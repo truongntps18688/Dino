@@ -86,6 +86,9 @@ public class EnemyNormal : MonoBehaviour
     }
     void attackEnemy()
     {
+        float distance = Vector3.Distance(GameSC.Instance.objPlayer.transform.position, transform.position);
+        if (distance > 5) // khoang cach giua enemy va player qua xa thi se khong tan cong
+            return;
         switch (data.attack)
         {
             case EnemyAttack.None:

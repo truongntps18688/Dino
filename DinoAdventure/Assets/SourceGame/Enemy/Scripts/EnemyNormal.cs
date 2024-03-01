@@ -134,9 +134,7 @@ public class EnemyNormal : MonoBehaviour
 
             BulletObj bullet = Instantiate(bulletData.Obj, transform.position, Quaternion.identity);
             bullet.setData(bulletData);
-            bullet.Settings(data.SpeedBullet, xBullet, yBullet, bullet.rigidbody2D.velocity);
-            //bullet.rigidbody2D.velocity = new Vector2(xBullet * data.SpeedBullet, yBullet * data.SpeedBullet);
-            //bullet.transform.right = bullet.rigidbody2D.velocity;
+            bullet.Settings(data.SpeedBullet, xBullet, yBullet);
             timeLoop = data.TimeResetBullet;
         }
     }
@@ -161,9 +159,7 @@ public class EnemyNormal : MonoBehaviour
             yBullet = y - transform.position.y;
             BulletObj bullet = Instantiate(bulletData.Obj, transform.position, Quaternion.identity);
             bullet.setData(bulletData);
-            bullet.Settings(data.SpeedBullet, xBullet, yBullet, bullet.rigidbody2D.velocity);
-            //bullet.rigidbody2D.velocity = new Vector2(xBullet * data.SpeedBullet, yBullet * data.SpeedBullet);
-            //bullet.transform.right = bullet.rigidbody2D.velocity;
+            bullet.Settings(data.SpeedBullet, xBullet, yBullet);
             timeLoop = data.TimeResetBullet;
         }
     }
@@ -178,54 +174,19 @@ public class EnemyNormal : MonoBehaviour
             {
                 repeatLoop--;
                 Vector2 direction = AILerpPath.velocity;
-                if (direction.x > 0)
-                {
-                    BulletObj bullet1 = Instantiate(bulletData.Obj, transform.position, Quaternion.identity);
-                    bullet1.setData(bulletData);
-                    bullet1.Settings(data.SpeedBullet, 2, 0, new Vector2(2, 0));
-                    //bullet1.rigidbody2D.velocity = new Vector2(2 * data.SpeedBullet, 0 * data.SpeedBullet);
-                    //bullet1.transform.right = new Vector2(2, 0);
+                int isRight = direction.x > 0 ? 1 : -1; // check huong ban cua vien dan
+                BulletObj bullet1 = Instantiate(bulletData.Obj, transform.position, Quaternion.identity);
+                bullet1.setData(bulletData);
+                bullet1.Settings(data.SpeedBullet, 2 * isRight, 0, new Vector2(2 * isRight, 0));
 
+                BulletObj bullet2 = Instantiate(bulletData.Obj, transform.position, Quaternion.identity);
+                bullet2.setData(bulletData);
+                bullet2.Settings(data.SpeedBullet, 1 * isRight, 1, new Vector2(1 * isRight, 1));
 
-                    BulletObj bullet2 = Instantiate(bulletData.Obj, transform.position, Quaternion.identity);
-                    bullet2.setData(bulletData);
-                    bullet2.Settings(data.SpeedBullet, 1, 1, new Vector2(1, 1));
-                    //bullet2.rigidbody2D.velocity = new Vector2(1 * data.SpeedBullet, 1 * data.SpeedBullet);
-                    //bullet2.transform.right = new Vector2(1, 1);
-
-
-                    BulletObj bullet3 = Instantiate(bulletData.Obj, transform.position, Quaternion.identity);
-                    bullet3.setData(bulletData);
-                    bullet3.Settings(data.SpeedBullet, 1, -1, new Vector2(1, -1));
-                    //bullet3.rigidbody2D.velocity = new Vector2(1 * data.SpeedBullet, -1 * data.SpeedBullet);
-                    //bullet3.transform.right = new Vector2(1, -1);
-
-                }
-                else
-                {
-                    BulletObj bullet1 = Instantiate(bulletData.Obj, transform.position, Quaternion.identity);
-                    bullet1.setData(bulletData);
-                    bullet1.Settings(data.SpeedBullet, 2, 0, new Vector2(2, 0));
-                    //bullet1.rigidbody2D.velocity = new Vector2(-2 * data.SpeedBullet, 0 * data.SpeedBullet);
-                    //bullet1.transform.right = new Vector2(-2, 0);
-
-
-                    BulletObj bullet2 = Instantiate(bulletData.Obj, transform.position, Quaternion.identity);
-                    bullet2.setData(bulletData);
-                    bullet2.Settings(data.SpeedBullet, 1, 1, new Vector2(1, 1));
-                    //bullet2.rigidbody2D.velocity = new Vector2(-1 * data.SpeedBullet, 1 * data.SpeedBullet);
-                    //bullet2.transform.right = new Vector2(-1, 1);
-
-
-                    BulletObj bullet3 = Instantiate(bulletData.Obj, transform.position, Quaternion.identity);
-                    bullet3.setData(bulletData);
-                    bullet3.Settings(data.SpeedBullet, 1, -1, new Vector2(1, -1));
-                    //bullet3.rigidbody2D.velocity = new Vector2(-1 * data.SpeedBullet, -1 * data.SpeedBullet);
-                    //bullet3.transform.right = new Vector2(-1, -1);
-
-                }
+                BulletObj bullet3 = Instantiate(bulletData.Obj, transform.position, Quaternion.identity);
+                bullet3.setData(bulletData);
+                bullet3.Settings(data.SpeedBullet, 1 * isRight, -1, new Vector2(1 * isRight, -1));
                 timeLoop = 0.3f;
-
             }
             else
             {
@@ -247,9 +208,6 @@ public class EnemyNormal : MonoBehaviour
                 Bullet.setData(bulletData);
                 Vector2 moveDirection = (GameSC.Instance.objPlayer.transform.position - transform.position).normalized;
                 Bullet.Settings(data.SpeedBullet, moveDirection.x, moveDirection.y, moveDirection);
-                //Bullet.rigidbody2D.velocity = new Vector2(moveDirection.x * data.SpeedBullet, moveDirection.y * data.SpeedBullet);
-                //Bullet.transform.right = new Vector2(moveDirection.x, moveDirection.y);
-
                 timeLoop = 0.2f;
             }
             else

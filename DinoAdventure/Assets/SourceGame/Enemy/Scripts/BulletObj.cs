@@ -46,4 +46,9 @@ public class BulletObj : MonoBehaviour
         rigidbody2D.velocity = new Vector2(xVelocity * SpeedBullet, yVelocity * SpeedBullet);
         transform.right = vector;
     }
+    public void Settings(float SpeedBullet, float xVelocity, float yVelocity)
+    {
+        rigidbody2D.velocity = new Vector2(xVelocity * SpeedBullet, yVelocity * SpeedBullet);
+        transform.right = rigidbody2D.velocity;
+    }
 }

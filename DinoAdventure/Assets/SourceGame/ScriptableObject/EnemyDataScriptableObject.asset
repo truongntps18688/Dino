@@ -47,7 +47,7 @@ MonoBehaviour:
     MoveSpeed: 0.9
     SpeedRotation: 0
     Hp: 12
-    bulletType: 3
+    bulletType: 0
     attack: 0
   - Key: GreenDevil
     EnemyName: GreenDevil
@@ -155,7 +155,7 @@ MonoBehaviour:
     MoveSpeed: 0.23
     SpeedRotation: 0
     Hp: 6
-    bulletType: 0
+    bulletType: 1
     attack: 1
   - Key: GiantDuck
     EnemyName: GiantDuck

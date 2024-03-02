@@ -70,6 +70,9 @@ public class BulletData
     public float timeDestroy;
     public BulletObj Obj;
     public bool isCloneBullet;
+    public bool isFollow;
+    public float SpeedFollow;
+    public float TimeLoopFollow;
     public int numBullet;
     public float SpeedNumBullet;
 }
@@ -118,18 +121,12 @@ public class BossAttribute
 public class BossAbility
 {
     public string name;
-    public BossAbilityType type;
     public int Healing;
     public int NumBullet;
     public float SpeedBullet;
-    public int SpeedRotation;
+    public float timeAbility;
+    public float SpeedRotation;
     public BulletType bulletType;
-}
-public enum BossAbilityType
-{
-    None = 0,
-    Healing,
-    Attack,
 }
 
 public enum WeaponType

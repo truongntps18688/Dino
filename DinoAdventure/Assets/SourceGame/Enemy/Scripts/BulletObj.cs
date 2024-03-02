@@ -7,6 +7,8 @@ public class BulletObj : MonoBehaviour
     [SerializeField] public Rigidbody2D rigidbody2D;
     public BulletData data;
     BulletObj objClone;
+
+    float timeLoop = 0.5f, Speed = 1.5f;
     public void setData(BulletData _data)
     {
         data = _data;
@@ -15,8 +17,26 @@ public class BulletObj : MonoBehaviour
         {
             objClone = ScriptableObjectMN.Instance.EnemyData.getBulletObj(BulletType.Circle).Obj;
         }
+        if (data.isFollow)
+        {
+            timeLoop = data.TimeLoopFollow;
+            Speed = data.SpeedFollow;
+        }
     }
-
+    private void Update()
+    {
+        if (data.isFollow)
+        {
+            timeLoop -= Time.deltaTime;
+            if (timeLoop <= 0)
+            {
+                Vector2 moveDirection = (GameSC.Instance.objPlayer.transform.position - transform.position).normalized;
+                rigidbody2D.velocity = new Vector2(moveDirection.x * Speed, moveDirection.y * Speed);
+                transform.right = new Vector2(moveDirection.x, moveDirection.y);
+                timeLoop = data.TimeLoopFollow * 10;
+            }
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 8)

@@ -13,6 +13,7 @@ public class BossNormal : MonoBehaviour
     public AILerp AILerpPath;
     public Animator animator;
     public Transform pointBullet, pointBullet1, pointBullet2, pointBullet3;
+    public GameObject weapon1, weapon2, weapon3;
     public GameObject cageObj, effCageObj1, effCageObj2;
     List<int> listNumbullet = new List<int>();
     List<int> listNumbulletCurr = new List<int>();
@@ -155,13 +156,57 @@ public class BossNormal : MonoBehaviour
     }
     void BossAttachk3()
     {
+        //timeLoop -= Time.deltaTime;
+        //if (timeLoop <= 0 & indexAttack == 0 & die == false)
+        //{
+        //    AILerpPath.speed = 0f;
+        //    int rd = Random.Range(1, 4);
+        //    indexAttack = rd = 1;
+        //    setActiveWeapons(indexAttack);
+        //}
+        //BossAttachk3_1();
+        //BossAttachk3_2();
+        //BossAttachk3_3();
+        
 
+        // working
     }
     void BossAttachk4()
     {
 
     }
     void BossAttachk5()
+    {
+
+    }
+    void BossAttachk3_1()
+    {
+        if (timeLoop <= 0 & indexAttack == 1 & die == false)
+        {
+            listNumbullet[0]--;
+            Vector2 moveDirection = (GameSC.Instance.objPlayer.transform.position - transform.position).normalized;
+
+            Instantiate(explosionData.explosionRed, pointBullet.position, Quaternion.identity);
+            BulletData bulletData = ScriptableObjectMN.Instance.EnemyData.getBulletObj(data.listSkill[0].bulletType);
+            BulletObj bullet = Instantiate(bulletData.Obj, pointBullet.position, Quaternion.identity);
+            bullet.setData(bulletData);
+            bullet.Settings(data.listSkill[0].SpeedBullet, moveDirection.x, moveDirection.y);
+
+            timeLoop = data.listSkill[0].timeAbility;
+            if (listNumbullet[0] <= 0)
+            {
+                AILerpPath.speed = data.MoveSpeed;
+                timeLoop = timeRe;
+                indexAttack = 0;
+                listNumbullet[0] = listNumbulletCurr[0];
+            }
+        }
+    }
+    void BossAttachk3_2()
+    {
+
+    }
+    void BossAttachk3_3()
     {
 
     }
@@ -299,6 +344,12 @@ public class BossNormal : MonoBehaviour
                 listNumbullet[1] = listNumbulletCurr[1];
             }
         }
+    }
+    void setActiveWeapons(int attack)
+    {
+        weapon1.SetActive(attack == 2);
+        weapon2.SetActive(attack == 3);
+        weapon3.SetActive(attack == 4);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

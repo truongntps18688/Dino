@@ -230,12 +230,33 @@ MonoBehaviour:
   - Key: Boss_DarkSideDino
     EnemyName: Boss_DarkSideDino
     TimeResetBullet: 3
-    TimeLoop: 0
+    TimeLoop: 3
     MoveSpeed: 0.5
     Hp: 60
     TimeRun: 0
     BossAttack: 9
-    listSkill: []
+    listSkill:
+    - name: kill 1
+      Healing: 0
+      NumBullet: 20
+      SpeedBullet: 2
+      timeAbility: 0.1
+      SpeedRotation: 0
+      bulletType: 3
+    - name: kill 2
+      Healing: 0
+      NumBullet: 10
+      SpeedBullet: 2
+      timeAbility: 0.2
+      SpeedRotation: 0
+      bulletType: 2
+    - name: kill 3
+      Healing: 0
+      NumBullet: 5
+      SpeedBullet: 2
+      timeAbility: 0.5
+      SpeedRotation: 0
+      bulletType: 6
   - Key: Boss_TheThreeHusketeers
     EnemyName: Boss_TheThreeHusketeers
     TimeResetBullet: 3

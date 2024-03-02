@@ -13,7 +13,7 @@ public class BulletObj : MonoBehaviour
         Destroy(gameObject, data.timeDestroy);
         if (data.isCloneBullet)
         {
-            objClone = ScriptableObjectMN.Instance.EnemyData.getBulletObj(BulletType.Blue).Obj;
+            objClone = ScriptableObjectMN.Instance.EnemyData.getBulletObj(BulletType.Circle).Obj;
         }
     }
 

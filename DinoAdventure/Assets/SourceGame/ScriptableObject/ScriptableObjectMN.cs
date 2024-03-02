@@ -77,8 +77,11 @@ public class BulletData
 public class explosionData
 {
     public GameObject explosion;
+    public GameObject explosionRed;
+    public GameObject explosionYellow;
     public GameObject explosionClassic;
     public GameObject explosionBazoka;
+    public GameObject effBuffHP;
 }
 
 
@@ -103,6 +106,7 @@ public class BossAttribute
     public string Key;
     public string EnemyName;
     public float TimeResetBullet;
+    public float TimeLoop;
     public float MoveSpeed;
     public int Hp;
     public float TimeRun;
@@ -116,12 +120,6 @@ public class BossAbility
     public string name;
     public BossAbilityType type;
     public int Healing;
-    public bool isAttack;
-    public List<BulletDataBoss> listBullet;
-}
-[System.Serializable]
-public class BulletDataBoss
-{
     public int NumBullet;
     public float SpeedBullet;
     public int SpeedRotation;

@@ -102,18 +102,41 @@ public class BossAttribute
 {
     public string Key;
     public string EnemyName;
+    public float TimeResetBullet;
     public float MoveSpeed;
-    public float SpeedBullet;
-    public float TimeLoop;
     public int Hp;
     public float TimeRun;
     public EnemyAttack BossAttack;
+    public List<BossAbility> listSkill;
 }
 
+[System.Serializable]
+public class BossAbility
+{
+    public string name;
+    public BossAbilityType type;
+    public int Healing;
+    public bool isAttack;
+    public List<BulletDataBoss> listBullet;
+}
+[System.Serializable]
+public class BulletDataBoss
+{
+    public int NumBullet;
+    public float SpeedBullet;
+    public int SpeedRotation;
+    public BulletType bulletType;
+}
+public enum BossAbilityType
+{
+    None = 0,
+    Healing,
+    Attack,
+}
 
 public enum WeaponType
 {
     None = 0,
-    Pistol = 1,
-    Bazooka = 2,
+    Pistol,
+    Bazooka,
 }

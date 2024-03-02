@@ -1326,7 +1326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &7611882186870866740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1343,15 +1343,18 @@ MonoBehaviour:
   data:
     Key: 
     EnemyName: 
+    TimeResetBullet: 0
     MoveSpeed: 0
-    SpeedBullet: 0
-    TimeLoop: 0
     Hp: 0
     TimeRun: 0
     BossAttack: 0
-  AILerpPath: {fileID: 0}
-  animator: {fileID: 0}
-  pointBullet: {fileID: 0}
+    listSkill: []
+  AILerpPath: {fileID: 7611882186870866750}
+  animator: {fileID: 7611882185697907146}
+  pointBullet: {fileID: 1499491536}
+  cageObj: {fileID: 1833234326}
+  effCageObj1: {fileID: 445515756702618675, guid: 538ee6e8436452d4d8c7103a38cbb2f2, type: 3}
+  effCageObj2: {fileID: 0}
 --- !u!114 &7611882186870866749
 MonoBehaviour:
   m_ObjectHideFlags: 0

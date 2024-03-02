@@ -169,44 +169,71 @@ MonoBehaviour:
   listBossdata:
   - Key: Boss_GiantMutantBeetle
     EnemyName: Boss_GiantMutantBeetle
+    TimeResetBullet: 3
     MoveSpeed: 0.5
-    SpeedBullet: 2
-    TimeLoop: 3
     Hp: 60
     TimeRun: 20
     BossAttack: 7
+    listSkill:
+    - name: Kill 1
+      type: 2
+      Healing: 0
+      isAttack: 0
+      listBullet:
+      - NumBullet: 1
+        SpeedBullet: 1.5
+        SpeedRotation: 0
+        bulletType: 7
+    - name: Kill 2
+      type: 2
+      Healing: 0
+      isAttack: 1
+      listBullet:
+      - NumBullet: 25
+        SpeedBullet: 1.5
+        SpeedRotation: 0
+        bulletType: 7
+      - NumBullet: 1
+        SpeedBullet: 2
+        SpeedRotation: 0
+        bulletType: 8
+    - name: Kill 3
+      type: 1
+      Healing: 10
+      isAttack: 0
+      listBullet: []
   - Key: Boss_SkullGod
     EnemyName: Boss_SkullGod
+    TimeResetBullet: 3
     MoveSpeed: 0.3
-    SpeedBullet: 0.1
-    TimeLoop: 3
     Hp: 60
     TimeRun: 0
     BossAttack: 8
+    listSkill: []
   - Key: Boss_DarkSideDino
     EnemyName: Boss_DarkSideDino
+    TimeResetBullet: 3
     MoveSpeed: 0.5
-    SpeedBullet: 2
-    TimeLoop: 3
     Hp: 60
     TimeRun: 0
     BossAttack: 9
+    listSkill: []
   - Key: Boss_TheThreeHusketeers
     EnemyName: Boss_TheThreeHusketeers
+    TimeResetBullet: 5
     MoveSpeed: 0.3
-    SpeedBullet: 0
-    TimeLoop: 3
     Hp: 60
     TimeRun: 0
     BossAttack: 10
+    listSkill: []
   - Key: Boss_UmbrellaDarkKnight
     EnemyName: Boss_UmbrellaDarkKnight
+    TimeResetBullet: 0
     MoveSpeed: 4
-    SpeedBullet: 11
-    TimeLoop: 5
     Hp: 60
     TimeRun: 0
     BossAttack: 11
+    listSkill: []
   ListBulletData:
   - {fileID: -6007857137893288414, guid: 1798db9d9dec5da419d86d2577a55bdc, type: 3}
   - {fileID: 7145198348311737387, guid: 9e49f2841a2a842449791a6ec28832d9, type: 3}

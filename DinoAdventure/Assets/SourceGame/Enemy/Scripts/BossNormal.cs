@@ -7,11 +7,12 @@ public class BossNormal : MonoBehaviour
 {
     [SerializeField] public string key;
     [SerializeField] public BossAttribute data;
-    float HP = 0, TimeRun = 0, SpeedBullet = 0, timeRe = 0;
+    float HP = 0, TimeRun = 0, timeRe = 0;
     bool isRun = false, die = false, isAttack = false;
     public AILerp AILerpPath;
     public Animator animator;
     public Transform pointBullet;
+    public GameObject cageObj, effCageObj1, effCageObj2;
     float timeLoop;
     void Start()
     {
@@ -30,38 +31,36 @@ public class BossNormal : MonoBehaviour
         }
         HP = data.Hp;
         TimeRun = data.TimeRun;
-        SpeedBullet = data.SpeedBullet;
-        timeRe = timeLoop = data.TimeLoop;
+        timeRe = timeLoop = data.TimeResetBullet;
         AILerpPath.speed = 0;
-        if (SpeedBullet == 0)
-            Debug.Log("bullet da co van toc rieng trong prefab");
-
-        // neu data.speedbuleet = 0 thì bullet da co speed rieng
     }
 
     void Update()
     {
         TimeRunBoss();
-        if (HP <= 0 & die == false)
+        if (HP <= 0 && die == false)
         {
             AILerpPath.speed = 0;
             animator.SetBool("Die", true);
             die = true;
         }
-        timeLoop -= Time.deltaTime;
-        if (timeLoop <= 0 & isAttack == false & die == false)
-        {
-            isAttack = true;
-            attack();
-        }
+        attack();
     }
     void TimeRunBoss()
     {
         TimeRun -= Time.deltaTime;
-        if (TimeRun <= 0 & isRun == false)
+        if (TimeRun <= 0 && isRun == false)
         {
             isRun = true;
             AILerpPath.speed = data.MoveSpeed;
+            if(cageObj != null)
+            {
+                cageObj.SetActive(false);
+                GameObject eff = Instantiate(effCageObj1, transform.position, Quaternion.identity);
+                GameObject eff2 = Instantiate(effCageObj2, transform.position, Quaternion.identity);
+                Destroy(eff2, 0.25f);
+                Destroy(eff, 2f);
+            }
         }
     }
     void attack()

@@ -59,7 +59,7 @@ public class EnemyNormal : MonoBehaviour
     void isMoveNotAILerp()
     {
         if (checkAIPath()) return;
-        if (rigidbody2D.velocity.x < data.MoveSpeed - 0.2f & rigidbody2D.velocity.x > -data.MoveSpeed + 0.2f)
+        if (rigidbody2D.velocity.x < data.MoveSpeed - 0.2f && rigidbody2D.velocity.x > -data.MoveSpeed + 0.2f)
         {
             x = Random.Range(-1f, 1f);
             y = Random.Range(-1f, 1f);
@@ -68,7 +68,7 @@ public class EnemyNormal : MonoBehaviour
     }
     void isDie()
     {
-        if (HP <= 0 & die == false)
+        if (HP <= 0 && die == false)
         {
             if (checkAIPath())
                 AILerpPath.speed = 0;
@@ -156,7 +156,7 @@ public class EnemyNormal : MonoBehaviour
             angel = 0;
         }
         timeLoop -= Time.deltaTime;
-        if (timeLoop < 0 & die == false)
+        if (timeLoop < 0 && die == false)
         {
             xBullet = x - transform.position.x;
             yBullet = y - transform.position.y;
@@ -173,7 +173,7 @@ public class EnemyNormal : MonoBehaviour
         timeLoop -= Time.deltaTime;
         if (timeLoop <= 0)
         {
-            if (repeatLoop > 0 & die == false)
+            if (repeatLoop > 0 && die == false)
             {
                 repeatLoop--;
                 Vector2 direction = AILerpPath.velocity;

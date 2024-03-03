@@ -156,18 +156,18 @@ public class BossNormal : MonoBehaviour
     }
     void BossAttachk3()
     {
-        //timeLoop -= Time.deltaTime;
-        //if (timeLoop <= 0 & indexAttack == 0 & die == false)
-        //{
-        //    AILerpPath.speed = 0f;
-        //    int rd = Random.Range(1, 4);
-        //    indexAttack = rd = 1;
-        //    setActiveWeapons(indexAttack);
-        //}
-        //BossAttachk3_1();
-        //BossAttachk3_2();
-        //BossAttachk3_3();
-        
+        timeLoop -= Time.deltaTime;
+        if (timeLoop <= 0 & indexAttack == 0 & die == false)
+        {
+            AILerpPath.speed = 0f;
+            int rd = Random.Range(1, 4);
+            indexAttack = rd = 1;
+            setActiveWeapons(indexAttack);
+        }
+        BossAttachk3_1();
+        BossAttachk3_2();
+        BossAttachk3_3();
+
 
         // working
     }
@@ -347,9 +347,9 @@ public class BossNormal : MonoBehaviour
     }
     void setActiveWeapons(int attack)
     {
-        weapon1.SetActive(attack == 2);
-        weapon2.SetActive(attack == 3);
-        weapon3.SetActive(attack == 4);
+        weapon1.SetActive(attack == 1);
+        weapon2.SetActive(attack == 2);
+        weapon3.SetActive(attack == 3);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

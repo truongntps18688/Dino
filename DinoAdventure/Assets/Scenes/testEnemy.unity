@@ -718,9 +718,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -221842103
+  m_SortingLayer: 1
+  m_SortingOrder: 13
   m_Sprite: {fileID: 1098179606456428539, guid: b10f2cff96a99ad45b4674e2d06cf89c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -917,7 +917,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097904616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.734, y: -0.028, z: 0}
+  m_LocalPosition: {x: -2.238, y: 1.916, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -992,9 +992,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -221842103
+  m_SortingLayer: 1
+  m_SortingOrder: 13
   m_Sprite: {fileID: -7888296697152109952, guid: b10f2cff96a99ad45b4674e2d06cf89c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1297,9 +1297,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -221842103
+  m_SortingLayer: 1
+  m_SortingOrder: 13
   m_Sprite: {fileID: -3620006412023440441, guid: e0dffd6abee0f464f967fb2382ccb2a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1436,7 +1436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &9188958480585465618
 Rigidbody2D:
   serializedVersion: 4
@@ -1513,6 +1513,9 @@ MonoBehaviour:
   pointBullet1: {fileID: 594092821}
   pointBullet2: {fileID: 1428714281}
   pointBullet3: {fileID: 0}
+  weapon1: {fileID: 1195840687}
+  weapon2: {fileID: 876707971}
+  weapon3: {fileID: 1631087671}
   cageObj: {fileID: 0}
   effCageObj1: {fileID: 0}
   effCageObj2: {fileID: 0}

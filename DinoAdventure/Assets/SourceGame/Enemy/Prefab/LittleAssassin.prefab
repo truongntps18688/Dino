@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6139824377359126001}
   - component: {fileID: 6139824377359126006}
   - component: {fileID: 6139824377359126007}
+  - component: {fileID: 6797603001892640312}
   m_Layer: 0
   m_Name: enemy_0
   m_TagString: Untagged
@@ -102,6 +103,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6797603001892640312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6139824377359126000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f414a28778d3d4a9cd997c31bcc316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6139824377832508631
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,10 +256,9 @@ MonoBehaviour:
     MoveSpeed: 0
     SpeedRotation: 0
     Hp: 0
-    IndexBullet: 0
+    bulletType: 0
     attack: 0
   AILerpPath: {fileID: 6139824378536025859}
-  HP: 0
   animator: {fileID: 6139824377359126007}
   rigidbody2D: {fileID: 6139824378536025869}
 --- !u!61 &6139824378536025868

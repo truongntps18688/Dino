@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Melee
   layers:
   - Default
   - TransparentFX
@@ -11,14 +12,14 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Actor
+  - Block
+  - Hitable
+  - Hurtable
+  - BulletEnemy
+  - Enemy
+  - Boss
+  - Hiable2
   - 
   - 
   - 
@@ -40,4 +41,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Actor
+    uniqueID: 4073125193
+    locked: 0
+  - name: WallBorder
+    uniqueID: 4251025071
+    locked: 0
+  - name: Effect
+    uniqueID: 1300649367
+    locked: 0
+  - name: UI
+    uniqueID: 129885917
     locked: 0

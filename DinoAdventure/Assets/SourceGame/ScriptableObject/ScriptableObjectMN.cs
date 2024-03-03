@@ -70,6 +70,9 @@ public class BulletData
     public float timeDestroy;
     public BulletObj Obj;
     public bool isCloneBullet;
+    public bool isFollow;
+    public float SpeedFollow;
+    public float TimeLoopFollow;
     public int numBullet;
     public float SpeedNumBullet;
 }
@@ -77,8 +80,13 @@ public class BulletData
 public class explosionData
 {
     public GameObject explosion;
+    public GameObject explosionRed;
+    public GameObject explosionYellow;
     public GameObject explosionClassic;
     public GameObject explosionBazoka;
+    public GameObject effBuffHP;
+    public GameObject EffectCrescent;
+    public GameObject LineEffectCrescent;
 }
 
 
@@ -95,7 +103,7 @@ public enum EnemyAttack
 [System.Serializable]
 public enum BulletType
 {
-    None = 0, Blue, Yellow, Red, Ellipse, Rhombus, ArrowShape, Circle, FootballShape, Crescent, Miner
+    None = 0, Blue, Yellow, Red, Ellipse, Rhombus, ArrowShape, Circle, FootballShape, Crescent, Miner, FakeBullet
 }
 [System.Serializable]
 public class BossAttribute
@@ -103,6 +111,7 @@ public class BossAttribute
     public string Key;
     public string EnemyName;
     public float TimeResetBullet;
+    public float TimeLoop;
     public float MoveSpeed;
     public int Hp;
     public float TimeRun;
@@ -114,24 +123,12 @@ public class BossAttribute
 public class BossAbility
 {
     public string name;
-    public BossAbilityType type;
     public int Healing;
-    public bool isAttack;
-    public List<BulletDataBoss> listBullet;
-}
-[System.Serializable]
-public class BulletDataBoss
-{
     public int NumBullet;
     public float SpeedBullet;
-    public int SpeedRotation;
+    public float timeAbility;
+    public float SpeedRotation;
     public BulletType bulletType;
-}
-public enum BossAbilityType
-{
-    None = 0,
-    Healing,
-    Attack,
 }
 
 public enum WeaponType

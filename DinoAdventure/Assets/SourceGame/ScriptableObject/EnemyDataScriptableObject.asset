@@ -169,137 +169,239 @@ MonoBehaviour:
   listBossdata:
   - Key: Boss_GiantMutantBeetle
     EnemyName: Boss_GiantMutantBeetle
-    TimeResetBullet: 3
+    TimeResetBullet: 0.1
+    TimeLoop: 3
     MoveSpeed: 0.5
     Hp: 60
-    TimeRun: 20
+    TimeRun: 5
     BossAttack: 7
     listSkill:
     - name: Kill 1
-      type: 2
       Healing: 0
-      isAttack: 0
-      listBullet:
-      - NumBullet: 1
-        SpeedBullet: 1.5
-        SpeedRotation: 0
-        bulletType: 7
+      NumBullet: 1
+      SpeedBullet: 2
+      timeAbility: 0
+      SpeedRotation: 0
+      bulletType: 8
     - name: Kill 2
-      type: 2
       Healing: 0
-      isAttack: 1
-      listBullet:
-      - NumBullet: 25
-        SpeedBullet: 1.5
-        SpeedRotation: 0
-        bulletType: 7
-      - NumBullet: 1
-        SpeedBullet: 2
-        SpeedRotation: 0
-        bulletType: 8
-    - name: Kill 3
-      type: 1
-      Healing: 10
-      isAttack: 0
-      listBullet: []
+      NumBullet: 25
+      SpeedBullet: 1.5
+      timeAbility: 0
+      SpeedRotation: 0
+      bulletType: 7
   - Key: Boss_SkullGod
     EnemyName: Boss_SkullGod
     TimeResetBullet: 3
+    TimeLoop: 3
     MoveSpeed: 0.3
     Hp: 60
     TimeRun: 0
     BossAttack: 8
-    listSkill: []
+    listSkill:
+    - name: kill 1
+      Healing: 0
+      NumBullet: 1
+      SpeedBullet: 0
+      timeAbility: 0
+      SpeedRotation: 0
+      bulletType: 0
+    - name: kill 2
+      Healing: 0
+      NumBullet: 40
+      SpeedBullet: 0.1
+      timeAbility: 0.075
+      SpeedRotation: 9
+      bulletType: 7
+    - name: kill 3
+      Healing: 0
+      NumBullet: 3
+      SpeedBullet: 0
+      timeAbility: 0.5
+      SpeedRotation: 0
+      bulletType: 6
+    - name: kill 4
+      Healing: 10
+      NumBullet: 2
+      SpeedBullet: 0
+      timeAbility: 2.5
+      SpeedRotation: 0
+      bulletType: 0
   - Key: Boss_DarkSideDino
     EnemyName: Boss_DarkSideDino
     TimeResetBullet: 3
+    TimeLoop: 3
     MoveSpeed: 0.5
     Hp: 60
     TimeRun: 0
     BossAttack: 9
-    listSkill: []
+    listSkill:
+    - name: kill 1
+      Healing: 0
+      NumBullet: 20
+      SpeedBullet: 2
+      timeAbility: 0.1
+      SpeedRotation: 0
+      bulletType: 3
+    - name: kill 2
+      Healing: 0
+      NumBullet: 10
+      SpeedBullet: 2
+      timeAbility: 0.2
+      SpeedRotation: 0
+      bulletType: 2
+    - name: kill 3
+      Healing: 0
+      NumBullet: 5
+      SpeedBullet: 2
+      timeAbility: 0.5
+      SpeedRotation: 0
+      bulletType: 6
   - Key: Boss_TheThreeHusketeers
     EnemyName: Boss_TheThreeHusketeers
-    TimeResetBullet: 5
+    TimeResetBullet: 3
+    TimeLoop: 3
     MoveSpeed: 0.3
     Hp: 60
     TimeRun: 0
     BossAttack: 10
-    listSkill: []
+    listSkill:
+    - name: kill 1
+      Healing: 0
+      NumBullet: 20
+      SpeedBullet: 1.5
+      timeAbility: 3
+      SpeedRotation: 0
+      bulletType: 5
+    - name: kill 2
+      Healing: 0
+      NumBullet: 10
+      SpeedBullet: 1.4
+      timeAbility: 0.15
+      SpeedRotation: 0
+      bulletType: 4
+    - name: kill 3
+      Healing: 0
+      NumBullet: 1
+      SpeedBullet: 3.5
+      timeAbility: 3
+      SpeedRotation: 0
+      bulletType: 9
   - Key: Boss_UmbrellaDarkKnight
     EnemyName: Boss_UmbrellaDarkKnight
-    TimeResetBullet: 0
+    TimeResetBullet: 5
+    TimeLoop: 5
     MoveSpeed: 4
     Hp: 60
     TimeRun: 0
     BossAttack: 11
     listSkill: []
-  ListBulletData:
-  - {fileID: -6007857137893288414, guid: 1798db9d9dec5da419d86d2577a55bdc, type: 3}
-  - {fileID: 7145198348311737387, guid: 9e49f2841a2a842449791a6ec28832d9, type: 3}
-  - {fileID: -5643105228771564274, guid: 6b6a89af70e5ffe42a1820cef2cff5c0, type: 3}
   ListBullet:
   - type: 1
     timeDestroy: 3.5
     Obj: {fileID: 1278393034323871039, guid: 8b47802d06e2613459b097a73de0085d, type: 3}
     isCloneBullet: 0
+    isFollow: 0
+    SpeedFollow: 0
+    TimeLoopFollow: 0
     numBullet: 0
     SpeedNumBullet: 0
   - type: 2
     timeDestroy: 3.5
     Obj: {fileID: 5427831406693092235, guid: 9a57398ef7bb3454f81c94df54fd0a60, type: 3}
     isCloneBullet: 0
+    isFollow: 0
+    SpeedFollow: 0
+    TimeLoopFollow: 0
     numBullet: 0
     SpeedNumBullet: 0
   - type: 3
     timeDestroy: 3.5
     Obj: {fileID: 3215133077285027287, guid: 8122a210b93841d448619597d6c32a95, type: 3}
     isCloneBullet: 0
+    isFollow: 0
+    SpeedFollow: 0
+    TimeLoopFollow: 0
     numBullet: 0
     SpeedNumBullet: 0
   - type: 4
     timeDestroy: 3.5
     Obj: {fileID: 1395570928797565930, guid: e05bee480b7bbbc4a9f6e9febc64a409, type: 3}
     isCloneBullet: 0
+    isFollow: 0
+    SpeedFollow: 0
+    TimeLoopFollow: 0
     numBullet: 0
     SpeedNumBullet: 0
   - type: 5
     timeDestroy: 3.5
     Obj: {fileID: 4055921149617570462, guid: 96d2330ca3bc0a1419d9972dbf95c6da, type: 3}
     isCloneBullet: 0
+    isFollow: 0
+    SpeedFollow: 0
+    TimeLoopFollow: 0
     numBullet: 0
     SpeedNumBullet: 0
   - type: 6
     timeDestroy: 3.5
     Obj: {fileID: 437306058482995503, guid: 01b5787a4239df8449a88dd39253873f, type: 3}
     isCloneBullet: 0
+    isFollow: 1
+    SpeedFollow: 1.5
+    TimeLoopFollow: 0.5
     numBullet: 0
     SpeedNumBullet: 0
   - type: 7
     timeDestroy: 3.5
     Obj: {fileID: 1417239917952461776, guid: 83a5960c3f9fc8140b8185ca20afebd9, type: 3}
     isCloneBullet: 0
+    isFollow: 0
+    SpeedFollow: 0
+    TimeLoopFollow: 0
     numBullet: 0
     SpeedNumBullet: 0
   - type: 8
-    timeDestroy: 0.35
+    timeDestroy: 5
     Obj: {fileID: 5258864171208072186, guid: 45e28e232aa00a64ab289c929b529c40, type: 3}
     isCloneBullet: 1
+    isFollow: 0
+    SpeedFollow: 0
+    TimeLoopFollow: 0
     numBullet: 10
-    SpeedNumBullet: 1.8
+    SpeedNumBullet: 8
   - type: 9
     timeDestroy: 5
     Obj: {fileID: 631490410626151325, guid: c940612a7f123394091a57bafd6ad5c9, type: 3}
     isCloneBullet: 0
+    isFollow: 0
+    SpeedFollow: 0
+    TimeLoopFollow: 0
     numBullet: 0
     SpeedNumBullet: 0
   - type: 10
     timeDestroy: 5
     Obj: {fileID: 6870390801932209070, guid: 175d370b8fbb72b4d8f46f4a2d2a6306, type: 3}
     isCloneBullet: 0
+    isFollow: 0
+    SpeedFollow: 0
+    TimeLoopFollow: 0
+    numBullet: 0
+    SpeedNumBullet: 0
+  - type: 11
+    timeDestroy: 0
+    Obj: {fileID: 9145164705676314420, guid: 692b5a908fae45a489e8ca580939f50f, type: 3}
+    isCloneBullet: 0
+    isFollow: 0
+    SpeedFollow: 0
+    TimeLoopFollow: 0
     numBullet: 0
     SpeedNumBullet: 0
   explosionData:
-    explosion: {fileID: 0}
-    explosionClassic: {fileID: 0}
-    explosionBazoka: {fileID: 0}
+    explosion: {fileID: 1420392419569358320, guid: 13aecb912584d7a4882e0f15125505bb, type: 3}
+    explosionRed: {fileID: 1420392419569358320, guid: 13aecb912584d7a4882e0f15125505bb, type: 3}
+    explosionYellow: {fileID: 1420392419569358320, guid: 13aecb912584d7a4882e0f15125505bb, type: 3}
+    explosionClassic: {fileID: 1420392419569358320, guid: 13aecb912584d7a4882e0f15125505bb, type: 3}
+    explosionBazoka: {fileID: 1420392419569358320, guid: 13aecb912584d7a4882e0f15125505bb, type: 3}
+    effBuffHP: {fileID: 4595275050385860922, guid: 55c3d240f9303e54a9ad2e4fe521d581, type: 3}
+    EffectCrescent: {fileID: 1965416427597371763, guid: 0c4939b101b050245849a508db8c03d0, type: 3}
+    LineEffectCrescent: {fileID: 7396622728855215996, guid: 1467be3bd3303a446bceb258ed9b77c5, type: 3}

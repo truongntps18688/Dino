@@ -7,7 +7,6 @@ public class EnemyDataScriptableObject : ScriptableObject
 {
     public List<EnemyAttribute> ListEnemyData = new List<EnemyAttribute>();
     public List<BossAttribute> listBossdata = new List<BossAttribute>();
-    public List<Sprite> ListBulletData = new List<Sprite>();
     public List<BulletData> ListBullet = new List<BulletData>();
     public explosionData explosionData;
 
@@ -19,10 +18,6 @@ public class EnemyDataScriptableObject : ScriptableObject
     public BossAttribute getDataBossKey(string key)
     {
         return listBossdata.Find(item => item.Key == key);
-    }
-    public Sprite getBulletObj(int index)
-    {
-        return ListBulletData[index];
     }
     public BulletData getBulletObj(BulletType type)
     {

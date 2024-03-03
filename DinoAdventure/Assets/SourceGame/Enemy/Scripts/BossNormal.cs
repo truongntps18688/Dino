@@ -58,6 +58,14 @@ public class BossNormal : MonoBehaviour
             die = true;
         }
         attack();
+        faceVelocity();
+    }
+    void faceVelocity()
+    {
+        float sp = AILerpPath.speed;
+        animator.SetFloat("Speed", sp);
+        Vector2 direction = (GameSC.Instance.objPlayer.transform.position - transform.position).normalized;
+        transform.localScale = direction.x >= 0 ? new Vector3(1f, 1f, 1f) : new Vector3(-1f, 1f, 1f);
     }
     void TimeRunBoss()
     {
@@ -114,7 +122,7 @@ public class BossNormal : MonoBehaviour
     void BossAttachk2()
     {
         timeLoop -= Time.deltaTime;
-        if (timeLoop <= 0 & indexAttack == 0 & die == false)
+        if (timeLoop <= 0 && indexAttack == 0 && die == false)
         {
             int rd = HP < data.Hp ? Random.Range(1, 5) : Random.Range(1, 4); // ko su hoi mau khi mau dang day
             if (rd == 4 && checkHP == true)
@@ -157,56 +165,40 @@ public class BossNormal : MonoBehaviour
     void BossAttachk3()
     {
         timeLoop -= Time.deltaTime;
-        if (timeLoop <= 0 & indexAttack == 0 & die == false)
+        if (timeLoop <= 0 && indexAttack == 0 && die == false)
         {
             AILerpPath.speed = 0f;
             int rd = Random.Range(1, 4);
-            indexAttack = rd = 1;
+            indexAttack = rd;
             setActiveWeapons(indexAttack);
         }
-        BossAttachk3_1();
-        BossAttachk3_2();
-        BossAttachk3_3();
+        if (timeLoop <= 0 && indexAttack > 0 && die == false)
+        {   
+            listNumbullet[indexAttack-1]--;
+            GameObject eff = indexAttack % 2 == 0 ? explosionData.explosionYellow : explosionData.explosionRed;
+            Transform pointWeapon = indexAttack == 1 ? pointBullet : (indexAttack == 2) ? pointBullet1 : pointBullet2;
+            Vector2 moveDirection = (GameSC.Instance.objPlayer.transform.position - transform.position).normalized;
+            Instantiate(eff, pointWeapon.position, Quaternion.identity);
+            BulletData bulletData = ScriptableObjectMN.Instance.EnemyData.getBulletObj(data.listSkill[indexAttack - 1].bulletType);
+            BulletObj bullet = Instantiate(bulletData.Obj, pointWeapon.position, Quaternion.identity);
+            bullet.setData(bulletData);
+            bullet.Settings(data.listSkill[indexAttack - 1].SpeedBullet, moveDirection.x, moveDirection.y);
 
-
-        // working
+            timeLoop = data.listSkill[indexAttack - 1].timeAbility;
+            if (listNumbullet[indexAttack - 1] <= 0)
+            {
+                AILerpPath.speed = data.MoveSpeed;
+                timeLoop = timeRe;
+                listNumbullet[indexAttack - 1] = listNumbulletCurr[indexAttack - 1];
+                indexAttack = 0;
+            }
+        }
     }
     void BossAttachk4()
     {
 
     }
     void BossAttachk5()
-    {
-
-    }
-    void BossAttachk3_1()
-    {
-        if (timeLoop <= 0 & indexAttack == 1 & die == false)
-        {
-            listNumbullet[0]--;
-            Vector2 moveDirection = (GameSC.Instance.objPlayer.transform.position - transform.position).normalized;
-
-            Instantiate(explosionData.explosionRed, pointBullet.position, Quaternion.identity);
-            BulletData bulletData = ScriptableObjectMN.Instance.EnemyData.getBulletObj(data.listSkill[0].bulletType);
-            BulletObj bullet = Instantiate(bulletData.Obj, pointBullet.position, Quaternion.identity);
-            bullet.setData(bulletData);
-            bullet.Settings(data.listSkill[0].SpeedBullet, moveDirection.x, moveDirection.y);
-
-            timeLoop = data.listSkill[0].timeAbility;
-            if (listNumbullet[0] <= 0)
-            {
-                AILerpPath.speed = data.MoveSpeed;
-                timeLoop = timeRe;
-                indexAttack = 0;
-                listNumbullet[0] = listNumbulletCurr[0];
-            }
-        }
-    }
-    void BossAttachk3_2()
-    {
-
-    }
-    void BossAttachk3_3()
     {
 
     }
@@ -321,7 +313,7 @@ public class BossNormal : MonoBehaviour
     }
     void BossAttachk1_2()
     {
-        if (isAttack == true & timeLoop <= 0)
+        if (isAttack == true && timeLoop <= 0)
         {
             listNumbullet[1]--;
             Vector2 moveDirection = (GameSC.Instance.objPlayer.transform.position - transform.position).normalized;

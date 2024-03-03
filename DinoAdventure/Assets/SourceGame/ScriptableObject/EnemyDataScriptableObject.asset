@@ -265,7 +265,28 @@ MonoBehaviour:
     Hp: 60
     TimeRun: 0
     BossAttack: 10
-    listSkill: []
+    listSkill:
+    - name: kill 1
+      Healing: 0
+      NumBullet: 20
+      SpeedBullet: 1.5
+      timeAbility: 3
+      SpeedRotation: 0
+      bulletType: 5
+    - name: kill 2
+      Healing: 0
+      NumBullet: 10
+      SpeedBullet: 1.4
+      timeAbility: 0.15
+      SpeedRotation: 0
+      bulletType: 4
+    - name: kill 3
+      Healing: 0
+      NumBullet: 1
+      SpeedBullet: 3.5
+      timeAbility: 3
+      SpeedRotation: 0
+      bulletType: 9
   - Key: Boss_UmbrellaDarkKnight
     EnemyName: Boss_UmbrellaDarkKnight
     TimeResetBullet: 5
@@ -275,10 +296,6 @@ MonoBehaviour:
     TimeRun: 0
     BossAttack: 11
     listSkill: []
-  ListBulletData:
-  - {fileID: -6007857137893288414, guid: 1798db9d9dec5da419d86d2577a55bdc, type: 3}
-  - {fileID: 7145198348311737387, guid: 9e49f2841a2a842449791a6ec28832d9, type: 3}
-  - {fileID: -5643105228771564274, guid: 6b6a89af70e5ffe42a1820cef2cff5c0, type: 3}
   ListBullet:
   - type: 1
     timeDestroy: 3.5
@@ -370,6 +387,15 @@ MonoBehaviour:
     TimeLoopFollow: 0
     numBullet: 0
     SpeedNumBullet: 0
+  - type: 11
+    timeDestroy: 0
+    Obj: {fileID: 9145164705676314420, guid: 692b5a908fae45a489e8ca580939f50f, type: 3}
+    isCloneBullet: 0
+    isFollow: 0
+    SpeedFollow: 0
+    TimeLoopFollow: 0
+    numBullet: 0
+    SpeedNumBullet: 0
   explosionData:
     explosion: {fileID: 1420392419569358320, guid: 13aecb912584d7a4882e0f15125505bb, type: 3}
     explosionRed: {fileID: 1420392419569358320, guid: 13aecb912584d7a4882e0f15125505bb, type: 3}
@@ -377,3 +403,5 @@ MonoBehaviour:
     explosionClassic: {fileID: 1420392419569358320, guid: 13aecb912584d7a4882e0f15125505bb, type: 3}
     explosionBazoka: {fileID: 1420392419569358320, guid: 13aecb912584d7a4882e0f15125505bb, type: 3}
     effBuffHP: {fileID: 4595275050385860922, guid: 55c3d240f9303e54a9ad2e4fe521d581, type: 3}
+    EffectCrescent: {fileID: 1965416427597371763, guid: 0c4939b101b050245849a508db8c03d0, type: 3}
+    LineEffectCrescent: {fileID: 7396622728855215996, guid: 1467be3bd3303a446bceb258ed9b77c5, type: 3}

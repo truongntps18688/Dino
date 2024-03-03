@@ -7,7 +7,7 @@ public class BossNormal : MonoBehaviour
 {
     [SerializeField] public string key;
     [SerializeField] public BossAttribute data;
-    float HP = 0, TimeRun = 0, timeRe = 0, rdX, rdY, timeLoop, angel = 0, x, y;
+    float HP = 0, TimeRun = 0, timeRe = 0, rdX, rdY, timeLoop, timeLoop1, angel = 0, x, y;
     float xBullet, yBullet;
     bool isRun = false, die = false, isAttack = false;
     public AILerp AILerpPath;
@@ -39,7 +39,7 @@ public class BossNormal : MonoBehaviour
         }
         HP = data.Hp;
         TimeRun = data.TimeRun;
-        timeRe = timeLoop = data.TimeLoop;
+        timeRe = timeLoop = timeLoop1 = data.TimeLoop;
         AILerpPath.speed = 0;
         for (int i = 0; i < data.listSkill.Count; i++)
         {
@@ -62,10 +62,11 @@ public class BossNormal : MonoBehaviour
     }
     void faceVelocity()
     {
-        float sp = AILerpPath.speed;
-        animator.SetFloat("Speed", sp);
         Vector2 direction = (GameSC.Instance.objPlayer.transform.position - transform.position).normalized;
         transform.localScale = direction.x >= 0 ? new Vector3(1f, 1f, 1f) : new Vector3(-1f, 1f, 1f);
+        if (key != "Boss_DarkSideDino") return;
+        float sp = AILerpPath.speed;
+        animator.SetFloat("Speed", sp);
     }
     void TimeRunBoss()
     {
@@ -196,11 +197,81 @@ public class BossNormal : MonoBehaviour
     }
     void BossAttachk4()
     {
-
+        BossAttachk4_1vs2();
+        BossAttachk4_3();
     }
     void BossAttachk5()
     {
 
+    }
+    int skill2 = 0, skill1 = 0;
+    void BossAttachk4_1vs2()
+    {
+        timeLoop -= Time.deltaTime;
+        if (timeLoop <= 0 & skill2 == 0 & die == false)
+        {
+            float angel = 0;
+
+            for (int i = 0; i <= listNumbullet[0]; i++)
+            {
+                float mx = transform.position.x + Mathf.Cos(angel);
+                float my = transform.position.y + Mathf.Sin(angel);
+
+                float xBall = mx - transform.position.x;
+                float yBall = my - transform.position.y;
+                BulletData bulletData = ScriptableObjectMN.Instance.EnemyData.getBulletObj(data.listSkill[0].bulletType);
+                BulletObj bullet = Instantiate(bulletData.Obj, transform.position, Quaternion.identity);
+                bullet.setData(bulletData);
+                bullet.Settings(data.listSkill[1].SpeedBullet, xBall, yBall);
+                angel += 9;
+            }
+            skill2 = 1;
+            listNumbullet[0] = listNumbulletCurr[0];
+        }
+        if (timeLoop <= 0f & die == false & listNumbullet[1] > 0)
+        {
+            Vector2 moveDirection = (GameSC.Instance.objPlayer.transform.position - transform.position).normalized;
+            BulletData bulletData = ScriptableObjectMN.Instance.EnemyData.getBulletObj(data.listSkill[1].bulletType);
+            BulletObj bullet = Instantiate(bulletData.Obj, transform.position, Quaternion.identity);
+            bullet.setData(bulletData);
+            bullet.Settings(data.listSkill[1].SpeedBullet, moveDirection.x, moveDirection.y);
+            listNumbullet[0]--;
+            timeLoop = data.listSkill[1].timeAbility;
+        }
+        else if (listNumbullet[0] <= 0)
+        {
+            listNumbullet[0] = listNumbulletCurr[0];
+            skill2 = 0;
+            timeLoop = data.listSkill[0].timeAbility;
+        }
+    }
+    Vector2 moveDirectionAttachk4_3;
+    void BossAttachk4_3()
+    {
+        timeLoop1 -= Time.deltaTime;
+        if (timeLoop1 <= 0 & skill1 == 0 & die == false)
+        {
+            GameObject effectSkill1 = Instantiate(explosionData.EffectCrescent, transform.position, Quaternion.identity);
+            Destroy(effectSkill1, 3);
+
+            Instantiate(explosionData.LineEffectCrescent, transform.position, Quaternion.identity);
+            moveDirectionAttachk4_3 = (GameSC.Instance.objPlayer.transform.position - transform.position).normalized;
+            BulletData bulletData = ScriptableObjectMN.Instance.EnemyData.getBulletObj(BulletType.FakeBullet);
+            BulletObj butlet = Instantiate(bulletData.Obj, transform.position, Quaternion.identity);
+            butlet.SettingsFakeBulletCrescent(2, moveDirectionAttachk4_3);
+            skill1 = 1;
+            AILerpPath.speed = 0;
+        }
+        if (timeLoop1 <= -2)
+        {
+            BulletData bulletData = ScriptableObjectMN.Instance.EnemyData.getBulletObj(data.listSkill[2].bulletType);
+            BulletObj bullet = Instantiate(bulletData.Obj, transform.position, Quaternion.identity);
+            bullet.setData(bulletData);
+            bullet.Settings(data.listSkill[2].SpeedBullet, moveDirectionAttachk4_3);
+            skill1 = 0;
+            timeLoop1 = data.listSkill[2].timeAbility;
+            AILerpPath.speed = data.MoveSpeed;
+        }
     }
     void BossAttachk2_1()
     {

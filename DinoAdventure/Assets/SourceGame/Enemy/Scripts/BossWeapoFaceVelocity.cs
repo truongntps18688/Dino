@@ -20,14 +20,6 @@ public class BossWeapoFaceVelocity : MonoBehaviour
     void faceVelocity()
     {
         moveDirection = (GameSC.Instance.objPlayer.transform.position - transform.position).normalized;
-        Debug.Log(moveDirection);
-        if (moveDirection.x > 0)
-        {
-            transform.right = moveDirection;
-        }
-        else
-        {
-            transform.right = moveDirection * -1;
-        }
+        transform.right = moveDirection.x > 0 ? moveDirection : moveDirection * -1;
     }
 }

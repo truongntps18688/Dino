@@ -85,6 +85,8 @@ public class explosionData
     public GameObject explosionClassic;
     public GameObject explosionBazoka;
     public GameObject effBuffHP;
+    public GameObject EffectCrescent;
+    public GameObject LineEffectCrescent;
 }
 
 
@@ -101,7 +103,7 @@ public enum EnemyAttack
 [System.Serializable]
 public enum BulletType
 {
-    None = 0, Blue, Yellow, Red, Ellipse, Rhombus, ArrowShape, Circle, FootballShape, Crescent, Miner
+    None = 0, Blue, Yellow, Red, Ellipse, Rhombus, ArrowShape, Circle, FootballShape, Crescent, Miner, FakeBullet
 }
 [System.Serializable]
 public class BossAttribute

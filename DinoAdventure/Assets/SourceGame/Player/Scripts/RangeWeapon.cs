@@ -30,9 +30,10 @@ public abstract class RangeWeapon : MonoBehaviour ,IRangeWeapon
             projectile.SetActive(true);
         }
 
-        //Recoil
+       
         coolDownCounter = ReloadTime;
     }
+
 
     
 

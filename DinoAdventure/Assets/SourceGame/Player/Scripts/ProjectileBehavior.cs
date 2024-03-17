@@ -9,7 +9,7 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] private float _accuracy;
     [SerializeField] private float _drag;
     [SerializeField] private float _destroyTime;
-    [SerializeField] private Vector3 _flyingDirection;
+    [SerializeField] public Vector3 _flyingDirection;
 
     void Start()
     {

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Pistol : Weapon
 {
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float _speed;
+
     public override void Shoot()
     {
-        Debug.Log("Pistol Your mom!!");
+        var obj = ObjectPool.SharedInstance.CreateProjectile(firePoint);
     }
 }

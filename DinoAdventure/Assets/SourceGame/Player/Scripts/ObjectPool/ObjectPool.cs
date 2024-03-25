@@ -40,4 +40,16 @@ public class ObjectPool : MonoBehaviour
         }
         return null;
     }
+
+    public GameObject CreateProjectile(Transform firePoint)
+    {
+        GameObject projectile = ObjectPool.SharedInstance.GetPooledObject();
+        if (projectile != null)
+        {
+            projectile.transform.position = firePoint.position;
+            projectile.transform.rotation = firePoint.rotation;
+            projectile.SetActive(true);
+        }
+        return projectile;
+    }
 }
